@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_lib);
 
         if(savedInstanceState == null && getIntent().getExtras().containsKey(EXTRA_JOKE)){
             ((TextView)findViewById(R.id.txt_joke)).setText(getIntent().getExtras().getString(EXTRA_JOKE));
