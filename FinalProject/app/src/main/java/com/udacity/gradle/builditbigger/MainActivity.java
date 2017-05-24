@@ -10,13 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.alexandrenavarro.joke.backend.myApi.MyApi;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
 import java.io.IOException;
 
-import br.com.alexandrenavarro.lib.Joke;
 import retrofit2.Call;
 import retrofit2.GsonConverterFactory;
 import retrofit2.Response;
@@ -76,11 +74,11 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://10.0.2.2:8080/_ah/api/myApi/v1/")
+                .baseUrl("http://10.0.2.2:8080/_ah/api/jokerApi/v1/")
                 .build();
 
-        Teste service = retrofit.create(Teste.class);
-        Call<Data> abacate = service.syHi(name);
+        JokerService service = retrofit.create(JokerService.class);
+        Call<Data> abacate = service.getJoke();
         try {
             Response<Data> execute = abacate.execute();
            return execute.body().getData();
