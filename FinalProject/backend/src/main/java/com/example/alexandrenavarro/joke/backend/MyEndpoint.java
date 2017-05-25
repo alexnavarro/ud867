@@ -33,7 +33,7 @@ public class MyEndpoint {
     /**
      * A simple endpoint method that takes a name and says Hi back
      */
-    @ApiMethod(name = "pickupAJoke", httpMethod = ApiMethod.HttpMethod.GET)
+    @ApiMethod(name = "pickupAJoke")
     public MyBean pickupAJoke() {
         MyBean response = new MyBean();
         Random rand = new Random();
