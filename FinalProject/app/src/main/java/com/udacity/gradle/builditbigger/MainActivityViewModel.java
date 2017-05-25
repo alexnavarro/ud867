@@ -1,21 +1,33 @@
 package com.udacity.gradle.builditbigger;
 
-import android.app.Application;
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.ViewModel;
+
+import com.udacity.gradle.builditbigger.net.JokeRepository;
 
 import javax.inject.Inject;
 
-import retrofit2.Retrofit;
 
 /**
  * Created by alexandrenavarro on 5/24/17.
  */
 
-public class MainActivityViewModel {
+public class MainActivityViewModel extends ViewModel {
+
+    private LiveData<Data> data;
 
     @Inject
-    Retrofit retrofit;
+    protected JokeRepository jokeRepo;
 
-    public MainActivityViewModel(Retrofit retrofit){
-   
+    public MainActivityViewModel(){
+        JokeApplication.getApp().getDataComponent().inject(this);
+    }
+
+    public void loadAJoke() {
+        data = jokeRepo.loadAJoke();
+    }
+
+    public LiveData<Data> getData() {
+        return data;
     }
 }

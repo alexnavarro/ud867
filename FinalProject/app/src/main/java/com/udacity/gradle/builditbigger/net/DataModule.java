@@ -6,6 +6,7 @@ import com.udacity.gradle.builditbigger.JokerService;
 
 import javax.inject.Singleton;
 
+import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
 import retrofit2.GsonConverterFactory;
@@ -15,6 +16,7 @@ import retrofit2.Retrofit;
  * Created by alexandrenavarro on 5/24/17.
  */
 
+@Module
 public class DataModule {
 
     public final static String BASE_URL = "http://10.0.2.2:8080/_ah/api/jokerApi/v1/";
