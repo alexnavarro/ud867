@@ -40,6 +40,4 @@ dependencies {
     compile 'com.google.dagger:dagger:2.+'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.+'
     provided 'javax.annotation:jsr250-api:1.0'
-
-    compile project(path: ':backend', configuration: 'android-endpoints')
 }
