@@ -12,13 +12,10 @@ import br.com.alexandrenavarro.lib.Joke;
 
 public class MainActivity extends LifecycleActivity {
 
-//    private MainActivityViewModel viewModel;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
     }
 
 
@@ -46,20 +43,6 @@ public class MainActivity extends LifecycleActivity {
 
     public void tellJoke(View view) {
         new JokerAsyncTask().execute();
-//        viewModel.loadAJoke();
-//        viewModel.getData().observe(this, new Observer<Data>() {
-//            @Override
-//            public void onChanged(@Nullable Data data) {
-//                Intent intent = new Intent(MainActivity.this, br.com.alexandrenavarro.jokerandroidlib.MainActivity.class);
-//                intent.putExtra(br.com.alexandrenavarro.jokerandroidlib.MainActivity.EXTRA_JOKE, data.getData());
-//                startActivity(intent);
-//            }
-//        });
-//        Intent intent = new Intent(this, br.com.alexandrenavarro.jokerandroidlib.MainActivity.class);
-//        intent.putExtra(br.com.alexandrenavarro.jokerandroidlib.MainActivity.EXTRA_JOKE, new Joke().tell());
-//        startActivity(intent);
-//        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Bulachudo"));
-
     }
 
     private  class JokerAsyncTask extends AsyncTask<Void, Void, String> {
