@@ -1,16 +1,16 @@
 package com.udacity.gradle.builditbigger;
 
-import android.arch.lifecycle.LifecycleActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import br.com.alexandrenavarro.lib.Joke;
 
-public class MainActivity extends LifecycleActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
