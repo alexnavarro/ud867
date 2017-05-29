@@ -7,15 +7,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import br.com.alexandrenavarro.lib.Joke;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
     }
 
 
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
+        progressBar.setVisibility(View.VISIBLE);
         new JokerAsyncTask().execute();
     }
 
@@ -57,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, br.com.alexandrenavarro.jokerandroidlib.MainActivity.class);
             intent.putExtra(br.com.alexandrenavarro.jokerandroidlib.MainActivity.EXTRA_JOKE, result);
             startActivity(intent);
+            progressBar.setVisibility(View.GONE);
         }
     }
 }
